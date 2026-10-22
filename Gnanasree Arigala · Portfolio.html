@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gnanasree Arigala · Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b1e; --bg2:#12122c; --card:rgba(255,255,255,.04); --line:rgba(255,255,255,.12);
+  --text:#ecebf7; --muted:#a3a2c2; --gold:#f2c76e; --rose:#ff8fb1; --star:#ffffff;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#fbf4e8; --bg2:#f3e8d6; --card:rgba(60,30,80,.05); --line:rgba(60,30,80,.15);
+    --text:#2a1f3d; --muted:#6b5f80; --gold:#b9770e; --rose:#c2386b; --star:#2a1f3d;
+  }
+}
+:root[data-theme="light"]{--bg:#fbf4e8;--bg2:#f3e8d6;--card:rgba(60,30,80,.05);--line:rgba(60,30,80,.15);--text:#2a1f3d;--muted:#6b5f80;--gold:#b9770e;--rose:#c2386b;--star:#2a1f3d}
+:root[data-theme="dark"]{--bg:#0b0b1e;--bg2:#12122c;--card:rgba(255,255,255,.04);--line:rgba(255,255,255,.12);--text:#ecebf7;--muted:#a3a2c2;--gold:#f2c76e;--rose:#ff8fb1;--star:#ffffff}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 700px at 80% -10%,var(--bg2),var(--bg));background-color:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main,header,footer{position:relative;z-index:1}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav .logo{font-family:var(--serif);font-size:1.15rem;text-decoration:none;color:var(--gold)}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:.9rem}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--text)}
+@media(max-width:560px){nav ul{gap:12px;font-size:.8rem}}
+.hero{min-height:84vh;display:flex;align-items:center}
+.eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:.75rem;color:var(--gold)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,8vw,5.2rem);line-height:1.02;margin:.3em 0 .25em}
+h1 em{font-style:italic;font-weight:400;color:var(--rose)}
+.lead{max-width:560px;color:var(--muted);font-size:1.1rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-weight:500;font-size:.95rem;background:var(--card);transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--gold)}
+.btn.primary{background:var(--gold);color:#1b1430;border-color:var(--gold)}
+section{padding:80px 0}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px}
+h2 span{color:var(--gold)}
+.sub{color:var(--muted);margin:0 0 36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.card{border:1px solid var(--line);background:var(--card);border-radius:18px;padding:22px;position:relative;transition:.25s;text-decoration:none;display:block}
+.card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.card .tag{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.card h3{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin:.35em 0 .4em}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.card .go{margin-top:14px;font-size:.85rem;color:var(--rose)}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:start}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+.about p{margin-top:0;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:.88rem;background:var(--card)}
+.panel{border:1px solid var(--line);border-radius:18px;padding:22px;background:var(--card)}
+.panel h3{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:1.1rem;color:var(--gold)}
+.tl{position:relative;padding-left:28px;border-left:1px solid var(--line);margin-left:6px}
+.tl-item{position:relative;padding-bottom:8px}
+.tl-item::before{content:"✦";position:absolute;left:-39px;top:2px;width:22px;text-align:center;color:var(--gold);background:var(--bg);font-size:1rem}
+.tl-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;align-items:baseline}
+.tl-item h3{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin:0}
+.tl-item .org{color:var(--rose);font-weight:500}
+.tl-item .when{font-size:.85rem;color:var(--gold);letter-spacing:.06em}
+.tl-item ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}
+.tl-item li{margin-bottom:6px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.todo{border-style:dashed}
+.todo p{margin:0;color:var(--muted);font-size:.95rem}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+@media(max-width:560px){nav ul li:not(:last-child){display:none}}
+.contact{text-align:center}
+.contact h2{font-size:clamp(2rem,5vw,3.2rem)}
+.contact .btns{justify-content:center}
+footer{padding:30px 0 50px;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+#theme{background:none;border:1px solid var(--line);color:var(--text);border-radius:999px;padding:5px 12px;cursor:pointer;font:inherit;font-size:.8rem}
+.reveal{opacity:0;transform:translateY(18px);transition:.7s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<nav><div class="wrap">
+  <a class="logo" href="#top">✦ Gnanasree</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button id="theme" type="button" aria-label="Toggle theme">☾ / ☀</button></li>
+  </ul>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="eyebrow">Data Analyst Intern · Developer · Learner</div>
+  <h1>Gnanasree<br><em>Arigala</em></h1>
+  <p class="lead">Computer Science student specializing in Big Data Analytics. I turn data into insight and ideas into working products, from Power BI dashboards to pose-detecting AI.</p>
+  <div class="btns">
+    <a class="btn primary" href="https://drive.google.com/file/d/1eHFpYPG6lJoy9803lTAOi3ebb-PRluU5/view?usp=drivesdk" target="_blank" rel="noopener">View résumé ↗</a>
+    <a class="btn" href="https://github.com/Gnanasree02" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/gnanasree-arigala-529797296" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div></header>
+
+<main>
+<section id="about"><div class="wrap">
+  <h2 class="reveal">About <span>me</span></h2>
+  <p class="sub reveal">A little orientation before the tour.</p>
+  <div class="about reveal">
+    <div>
+      <p>I&rsquo;m a B.Tech student in Computer Science and Engineering (Big Data Analytics) with skills in Python, SQL, Machine Learning, web development, and data analytics. I like solving real-world problems, with strong analytical instincts and hands-on experience building and analysing solutions.</p>
+      <p>Recent highlights: Runner-Up at SaRaM Project Expo 2026 with an AI yoga-pose trainer, and a current role as Data Analyst Intern at Zenith77. I&rsquo;m always looking for the next project, internship, or team where I can keep learning and ship.</p>
+      <div class="btns"><a class="btn" href="https://drive.google.com/file/d/1eHFpYPG6lJoy9803lTAOi3ebb-PRluU5/view?usp=drivesdk" target="_blank" rel="noopener">Open full résumé ↗</a></div>
+    </div>
+    <div class="panel">
+      <h3>At a glance</h3>
+      <div class="chips">
+        <span class="chip">B.Tech &middot; Big Data Analytics</span><span class="chip">SRM IST, Ramapuram</span><span class="chip">CGPA 9.5 / 10</span><span class="chip">Class of 2027</span><span class="chip">English &middot; Hindi &middot; Telugu &middot; Tamil</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2 class="reveal">Experience</h2>
+  <p class="sub reveal">Where I&rsquo;ve been putting skills to work.</p>
+  <div class="tl reveal">
+    <div class="tl-item">
+      <div class="tl-top"><h3>Data Analyst Intern</h3><span class="when">AUG 2026 – PRESENT</span></div>
+      <div class="org">Zenith77</div>
+      <ul>
+        <li>Analyzed data and performed data quality checks to ensure accuracy.</li>
+        <li>Supported business requirements analysis and reporting for data-driven solutions.</li></ul></div>
+    <div class="tl-item" style="margin-top:26px"><div class="tl-top"><h3>Web Development Intern</h3><span class="when">JUL 2025 – AUG 2025</span></div><div class="org">Vaultsofcodes &middot; Remote</div><ul><li>Developed responsive web pages with form validation and UI improvements.</li></ul></div>
+    <div class="tl-item" style="margin-top:26px"><div class="tl-top"><h3>Data Visualization Analyst (Virtual Internship)</h3><span class="when">JUN 2025</span></div><div class="org">TATA Forage &middot; Remote</div><ul><li>Created Power BI dashboards, performed data cleaning and EDA, and presented actionable business insights.</li></ul></div>
+    <div class="tl-item" style="margin-top:26px"><div class="tl-top"><h3>Web Development Intern</h3><span class="when">MAY 2024 – JUL 2024</span></div><div class="org">Gaganam Infotech Solutions &middot; Tirupati, Andhra Pradesh</div><ul><li>Assisted in web application development, testing, Git/GitHub, and frontend optimization.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2 class="reveal">Skills</h2>
+  <p class="sub reveal">The instruments I work with.</p>
+  <div class="skills">
+    <div class="panel reveal"><h3>Programming</h3><div class="chips"><span class="chip">C</span><span class="chip">Python</span><span class="chip">SQL</span></div></div>
+    <div class="panel reveal"><h3>Languages &amp; frameworks</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Flask</span><span class="chip">Django</span><span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span></div></div>
+    <div class="panel reveal"><h3>Data &amp; AI</h3><div class="chips"><span class="chip">Data Visualization</span><span class="chip">Data Analysis</span><span class="chip">Data Engineering</span><span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">NLP</span><span class="chip">Computer Vision</span><span class="chip">DBMS</span><span class="chip">CRUD Operations</span></div></div>
+    <div class="panel reveal"><h3>Tools</h3><div class="chips"><span class="chip">MySQL</span><span class="chip">Power BI</span><span class="chip">Microsoft Excel</span><span class="chip">Git &amp; GitHub</span><span class="chip">VS Code</span><span class="chip">Jupyter Notebook</span><span class="chip">WordPress</span></div></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2 class="reveal">Selected <span>constellations</span></h2>
+  <p class="sub reveal">Each project is a star in the map. Open one to see the code.</p>
+  <div class="grid">
+    <a class="card reveal" href="https://github.com/Gnanasree02/calculator-with-voice-assistant" target="_blank" rel="noopener">
+      <div class="tag">JavaScript</div><h3>Calculator with Voice Assistant</h3>
+      <p>A voice-enabled calculator built with HTML, CSS, JavaScript and the Web Speech API for hands-free calculations.</p><div class="go">View on GitHub →</div></a>
+    <a class="card reveal" href="https://github.com/Gnanasree02/Asana-AI-Trainer" target="_blank" rel="noopener">
+      <div class="tag">Machine Learning &middot; Runner-Up</div><h3>AI Asana Trainer</h3>
+      <p>Real-time yoga pose detection and correction using Python, OpenCV, Mediapipe and ML. Runner-Up at SaRaM Project Expo 2026.</p><div class="go">View on GitHub →</div></a>
+    <a class="card reveal" href="https://github.com/Gnanasree02/voter-registration-system" target="_blank" rel="noopener">
+      <div class="tag">Full stack</div><h3>Voter Registration System</h3>
+      <p>A web-based voter registration system using Python, Flask/Django, MySQL, HTML, CSS and JavaScript.</p><div class="go">View on GitHub →</div></a>
+    <div class="card reveal"><div class="tag">Data Science</div><h3>Food Nutrition Prediction</h3><p>A machine learning model that predicts food nutritional values using Python, Pandas, NumPy and Scikit-learn.</p></div>
+    <div class="card reveal"><div class="tag">SQL &middot; Analytics</div><h3>McDonald&rsquo;s Nutrition SQL Analysis</h3><p>SQL analysis comparing calories, protein, fat and sodium across menu categories.</p></div>
+    <a class="card reveal" href="https://github.com/Gnanasree02/Restaurant_management_system" target="_blank" rel="noopener">
+      <div class="tag">CSS</div><h3>Restaurant Management System</h3>
+      <p>A restaurant-facing interface for organising menus, orders, and day-to-day flow.</p><div class="go">View on GitHub →</div></a>
+    <a class="card reveal" href="https://github.com/Gnanasree02/Interactive-user-Registration-form" target="_blank" rel="noopener">
+      <div class="tag">CSS</div><h3>Interactive User Registration Form</h3>
+      <p>A friendly, interactive sign-up form with polished styling.</p><div class="go">View on GitHub →</div></a>
+    <a class="card reveal" href="https://github.com/Gnanasree02/Brainwave_Matrix_Intern-.-" target="_blank" rel="noopener">
+      <div class="tag">HTML · Internship</div><h3>Brainwave Matrix Internship</h3>
+      <p>Work completed during an internship with Brainwave Matrix.</p><div class="go">View on GitHub →</div></a>
+  </div>
+  <p class="sub reveal" style="margin-top:28px">13 repositories in total, <a href="https://github.com/Gnanasree02?tab=repositories" target="_blank" rel="noopener" style="color:var(--gold)">browse them all →</a></p>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <h2 class="reveal">Education</h2>
+  <p class="sub reveal">Where the foundations were laid.</p>
+  <div class="tl reveal">
+    <div class="tl-item"><div class="tl-top"><h3>B.Tech, Computer Science &amp; Engineering</h3><span class="when">2027</span></div><div class="org">SRM IST, Ramapuram &middot; Big Data Analytics</div><ul><li>CGPA: 9.5 / 10</li></ul></div>
+    <div class="tl-item" style="margin-top:26px"><div class="tl-top"><h3>Class XII &middot; State Board (MPC)</h3><span class="when">2023</span></div><div class="org">Sri Chaitanya Jr. College &middot; Tirupati, Andhra Pradesh</div><ul><li>Percentage: 81%</li></ul></div>
+    <div class="tl-item" style="margin-top:26px"><div class="tl-top"><h3>Class X &middot; State Board</h3><span class="when">2021</span></div><div class="org">Sri Seshachala E.M High School &middot; Tirupati, Andhra Pradesh</div><ul><li>Percentage: 100%</li></ul></div>
+  </div>
+</div></section>
+
+<section id="certifications"><div class="wrap">
+  <h2 class="reveal">Certifications</h2>
+  <p class="sub reveal">Proof of the learning.</p>
+  <div class="grid">
+    <div class="card reveal"><div class="tag">NPTEL &middot; Feb 2025</div><h3>Big Data Computing</h3><p>Elite with Silver</p></div>
+    <div class="card reveal"><div class="tag">NPTEL &middot; May 2026</div><h3>Cloud Computing and Distributed Systems</h3><p>Elite</p></div>
+    <div class="card reveal"><div class="tag">NPTEL &middot; Mar 2025</div><h3>Database Management System</h3></div>
+    <div class="card reveal"><div class="tag">NPTEL &middot; Nov 2024</div><h3>Python for Data Science</h3></div>
+    <div class="card reveal"><div class="tag">TATA Forage &middot; Jun 2025</div><h3>Data Visualization</h3></div>
+    <div class="card reveal"><div class="tag">GUVI &middot; May 2025</div><h3>Data Engineering</h3></div>
+  </div>
+</div></section>
+
+<section id="competitions"><div class="wrap">
+  <h2 class="reveal">Competitions</h2>
+  <p class="sub reveal">Hackathons, contests, and challenges.</p>
+  <div class="tl reveal">
+    <div class="tl-item"><div class="tl-top"><h3>SaRaM Project Expo 2026 &middot; Runner-Up</h3><span class="when">JAN 2026</span></div><div class="org">SRM Institute of Science and Technology</div><ul><li>Presented AI Asana Trainer, an AI-based yoga pose detection and correction system; secured Runner-Up and won ₹15,000.</li></ul></div>
+    <div class="tl-item" style="margin-top:26px"><div class="tl-top"><h3>Smart India Hackathon 2025 &middot; Internal Round</h3><span class="when">SEP 2025</span></div><div class="org">SRM IST, Ramapuram &middot; Participant</div><ul><li>Advanced through three rounds while developing a solution to a real-world problem.</li></ul></div>
+    <div class="tl-item" style="margin-top:26px"><div class="tl-top"><h3>SaRaM Project Expo 2025</h3><span class="when">JAN 2025</span></div><div class="org">SRM IST, Ramapuram &middot; Participant / Presenter</div><ul><li>Presented Building Estimation with Deep Art Maker, an AI solution using deep learning and text-to-image generation.</li></ul></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <h2 class="reveal">Let&rsquo;s build <span>something</span></h2>
+  <p class="sub reveal">Open to internships, collaborations, and conversations.</p>
+  <div class="btns reveal">
+    <a class="btn primary" href="mailto:aa6258@srmist.edu.in">Email me</a>
+    <a class="btn" href="https://www.linkedin.com/in/gnanasree-arigala-529797296" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/Gnanasree02" target="_blank" rel="noopener">See my code</a>
+    <a class="btn" href="https://drive.google.com/file/d/1eHFpYPG6lJoy9803lTAOi3ebb-PRluU5/view?usp=drivesdk" target="_blank" rel="noopener">Résumé</a>
+  </div>
+</div></section>
+</main>
+
+<footer>© 2026 Gnanasree Arigala · Made under a wide sky ✦</footer>
+
+<script>
+(function(){
+  var c=document.getElementById('sky'),x=c.getContext('2d'),W,H,stars=[],mx=-999,my=-999;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function col(){return getComputedStyle(document.documentElement).getPropertyValue('--star').trim()||'#fff'}
+  function gold(){return getComputedStyle(document.documentElement).getPropertyValue('--gold').trim()||'#f2c76e'}
+  function size(){W=c.width=innerWidth;H=c.height=innerHeight;var n=Math.min(110,Math.floor(W*H/14000));stars=[];
+    for(var i=0;i<n;i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+.3,p:Math.random()*6.28,vx:(Math.random()-.5)*.08,vy:(Math.random()-.5)*.08})}
+  function draw(t){
+    x.clearRect(0,0,W,H);var s=col(),g=gold();
+    x.fillStyle=s;
+    for(var i=0;i<stars.length;i++){var a=stars[i];
+      if(!reduce){a.x+=a.vx;a.y+=a.vy;if(a.x<0)a.x=W;if(a.x>W)a.x=0;if(a.y<0)a.y=H;if(a.y>H)a.y=0}
+      x.globalAlpha=.35+.45*Math.abs(Math.sin(t/1400+a.p));
+      x.beginPath();x.arc(a.x,a.y,a.r,0,6.28);x.fill();
+      for(var j=i+1;j<stars.length;j++){var b=stars[j],dx=a.x-b.x,dy=a.y-b.y,d=dx*dx+dy*dy;
+        if(d<9000){x.globalAlpha=(1-d/9000)*.18;x.strokeStyle=s;x.lineWidth=.6;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}
+      var ex=a.x-mx,ey=a.y-my;if(ex*ex+ey*ey<16000){x.globalAlpha=.5;x.strokeStyle=g;x.lineWidth=.8;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(mx,my);x.stroke()}
+    }
+    x.globalAlpha=1;if(!reduce)requestAnimationFrame(draw)}
+  addEventListener('resize',size);addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
+  size();requestAnimationFrame(draw);if(reduce)draw(0);
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)});
+
+  document.getElementById('theme').addEventListener('click',function(){
+    var r=document.documentElement,cur=r.getAttribute('data-theme');
+    if(!cur)cur=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+    r.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>
